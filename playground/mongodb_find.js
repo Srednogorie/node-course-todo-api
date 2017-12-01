@@ -20,15 +20,15 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     }
     console.log('Connected to MongoDb server.');
 
-    // // Find method is where the query goes. For example - .find({completed: true})
-    // db.collection('Todos').find({                             // .find() method => objects.all()
-    //     _id: new ObjectID('5a141bd6dce1a6936fb25b44')
-    // }).toArray().then((docs) => {
-    //     console.log('Todos');
-    //     console.log(JSON.stringify(docs, undefined, 2));
-    // }, (err) => {
-    //     console.log('Unable to fetch todos.', err);
-    // });
+    // Find method is where the query goes. For example - .find({completed: true})
+    db.collection('Todos').find({                             // .find() method => objects.all()
+        _id: new ObjectID('5a141bd6dce1a6936fb25b44')
+    }).toArray().then((docs) => {
+        console.log('Todos');
+        console.log(JSON.stringify(docs, undefined, 2));
+    }, (err) => {
+        console.log('Unable to fetch todos.', err);
+    });
 
 
     // db.collection('Todos').find().count().then((count) => {     // .count() method
